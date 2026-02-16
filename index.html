@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Madhavan — Virtual Try-On Startup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section id="intro-parallax" class="panel panel-intro">
+        <div class="ambient-glow"></div>
+        <div class="face-shell">
+          <img
+            src="assets/my-face.jpg"
+            alt="Madhavan with a serious expression"
+            id="hero-face"
+            onerror="this.style.display='none'; this.parentElement.classList.add('face-fallback')"
+          />
+          <h1>MADHAVAN</h1>
+          <p>AI Fashion Startup · 1M+ Global Users · $100M+ Revenue · 1000+ Brand Collabs</p>
+        </div>
+
+        <div class="app-cloud" aria-hidden="true">
+          <div class="app-tile" style="--x:-32; --y:-23; --z:0.2">Canva</div>
+          <div class="app-tile" style="--x:-19; --y:-31; --z:0.35">Figma</div>
+          <div class="app-tile" style="--x:2; --y:-34; --z:0.4">Adobe XD</div>
+          <div class="app-tile" style="--x:17; --y:-26; --z:0.28">Notion</div>
+          <div class="app-tile" style="--x:31; --y:-18; --z:0.22">Framer</div>
+          <div class="app-tile" style="--x:-36; --y:-1; --z:0.31">After Effects</div>
+          <div class="app-tile" style="--x:-22; --y:8; --z:0.36">Photoshop</div>
+          <div class="app-tile" style="--x:25; --y:2; --z:0.34">Illustrator</div>
+          <div class="app-tile" style="--x:35; --y:16; --z:0.2">Blender</div>
+          <div class="app-tile" style="--x:-14; --y:23; --z:0.29">Sketch</div>
+          <div class="app-tile" style="--x:6; --y:29; --z:0.4">Miro</div>
+          <div class="app-tile" style="--x:-30; --y:26; --z:0.26">InVision</div>
+        </div>
+      </section>
+
+      <section id="project-overview" class="panel panel-product">
+        <div class="product-bg"></div>
+        <div class="product-navbar glass">
+          <span class="brand">02°</span>
+          <nav>
+            <a href="#">Moonish</a>
+            <a href="#">New In</a>
+            <a href="#">Hot Drops</a>
+            <a href="#">Collection</a>
+          </nav>
+          <a href="#" class="cta">Virtual Collection</a>
+        </div>
+
+        <article class="product-card glass">
+          <aside class="mini-card">
+            <p class="eyebrow">NIKE</p>
+            <h3>Sneakers</h3>
+            <div class="shoe"></div>
+            <button>Refresh</button>
+          </aside>
+
+          <div class="main-product">
+            <div class="meta">
+              <h2>01</h2>
+              <p>
+                Startup Scale: <strong>1M+</strong> users · Revenue: <strong>$100M+</strong>
+                · Brand Collabs: <strong>1000+</strong>
+              </p>
+            </div>
+            <div class="bubble-stage">
+              <div class="bubble-ring"></div>
+              <div class="hoodie"></div>
+              <button class="cart-btn">Add to cart +</button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="tryon-parallax" class="panel panel-tryon">
+        <div class="sticky-stage">
+          <div class="tryon-copy">
+            <p>PROJECT 01</p>
+            <h2>Virtual Try-On Engine</h2>
+            <p>Scroll to dress me up with smooth frame-based outfit transitions.</p>
+          </div>
+          <div class="avatar-frame">
+            <img
+              src="assets/my-face.jpg"
+              alt="Madhavan face used for virtual try-on"
+              id="tryon-face"
+              onerror="this.style.display='none'; this.parentElement.classList.add('face-fallback')"
+            />
+            <div class="outfit-layer" id="outfit-layer"></div>
+            <div class="outfit-label" id="outfit-label">Frame 01 · Streetwear Hoodie</div>
+          </div>
+          <div class="progress-rail">
+            <span id="progress-fill"></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

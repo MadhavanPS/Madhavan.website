@@ -1,0 +1,326 @@
+:root {
+  --bg: #0d1016;
+  --text: #f6f7fb;
+  --muted: #bec8dd;
+  --glass: rgba(255, 255, 255, 0.13);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 20%, #1a2744, #0d1016 40%, #090b10);
+}
+
+.panel {
+  position: relative;
+  width: 100%;
+}
+
+.panel-intro {
+  min-height: 230vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.ambient-glow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle, rgba(121, 177, 255, 0.35), transparent 55%);
+  filter: blur(50px);
+}
+
+.face-shell {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90vw, 460px);
+  text-align: center;
+  z-index: 5;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.face-shell img,
+.avatar-frame img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+}
+
+.face-fallback {
+  min-height: 360px;
+  border-radius: 24px;
+  background: linear-gradient(160deg, #25324e, #111827);
+}
+
+.face-shell h1 {
+  margin: 14px 0 6px;
+  letter-spacing: 0.18em;
+}
+
+.face-shell p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.app-cloud {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 7;
+}
+
+.app-tile {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+}
+
+.panel-product {
+  min-height: 130vh;
+  padding: 5rem 1rem;
+  display: grid;
+  align-items: center;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.35) 20%, transparent 100%);
+}
+
+.product-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 10%, rgba(140, 193, 255, 0.22), transparent 60%);
+}
+
+.glass {
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+.product-navbar {
+  z-index: 2;
+  width: min(1100px, 95vw);
+  margin: 0 auto 1.5rem;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product-navbar nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.product-navbar a {
+  color: #f4f6ff;
+  text-decoration: none;
+  opacity: 0.9;
+  font-size: 0.85rem;
+}
+
+.product-navbar .brand {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.cta {
+  background: rgba(255, 255, 255, 0.18);
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+}
+
+.product-card {
+  position: relative;
+  z-index: 2;
+  width: min(1100px, 95vw);
+  margin: 0 auto;
+  border-radius: 30px;
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 1rem;
+}
+
+.mini-card {
+  border-radius: 24px;
+  padding: 1rem;
+  background: rgba(119, 165, 200, 0.35);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.mini-card h3,
+.mini-card p {
+  margin: 0;
+}
+
+.shoe {
+  height: 120px;
+  border-radius: 14px;
+  background: linear-gradient(140deg, #e7f3ff, #9dc3e3, #5b6f87);
+}
+
+.mini-card button {
+  border-radius: 999px;
+  border: 0;
+  padding: 0.5rem 1rem;
+}
+
+.main-product {
+  border-radius: 24px;
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(154, 196, 222, 0.3));
+}
+
+.meta h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  line-height: 1;
+}
+
+.meta p {
+  color: #ecf2ff;
+  margin: 0.4rem 0 1rem;
+}
+
+.bubble-stage {
+  height: 360px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #bbd9f2, #dbe9f7);
+}
+
+.bubble-ring {
+  position: absolute;
+  width: min(400px, 80%);
+  aspect-ratio: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.45);
+}
+
+.hoodie {
+  position: absolute;
+  width: 210px;
+  height: 230px;
+  left: 50%;
+  top: 53%;
+  transform: translate(-50%, -50%);
+  border-radius: 32px 32px 40px 40px;
+  background: linear-gradient(180deg, #c8a088, #8b6652);
+}
+
+.cart-btn {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+}
+
+.panel-tryon {
+  min-height: 380vh;
+}
+
+.sticky-stage {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  background: radial-gradient(circle at center, rgba(81, 125, 196, 0.35), rgba(8, 9, 13, 0.98) 65%);
+}
+
+.tryon-copy {
+  text-align: center;
+}
+
+.tryon-copy p,
+.tryon-copy h2 {
+  margin: 0.3rem 0;
+}
+
+.avatar-frame {
+  width: min(480px, 88vw);
+  height: min(640px, 75vh);
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: linear-gradient(180deg, #1e293d, #0e1523);
+}
+
+.outfit-layer {
+  position: absolute;
+  left: 50%;
+  bottom: 3%;
+  width: 62%;
+  height: 58%;
+  transform: translateX(-50%);
+  border-radius: 36px 36px 20px 20px;
+  transition: background 180ms linear, box-shadow 180ms linear;
+}
+
+.outfit-label {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.progress-rail {
+  width: min(500px, 90vw);
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+}
+
+.progress-rail span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #87b8ff, #f3cc9e);
+}
+
+@media (max-width: 900px) {
+  .product-card {
+    grid-template-columns: 1fr;
+  }
+}
